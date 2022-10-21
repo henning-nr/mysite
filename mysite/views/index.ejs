@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel=" Shortcut icon"
+      href="https://www.biography.com/.image/t_share/MTc5ODc5NjY5ODU0NjQzMzIy/gettyimages-3091504.jpg"
+    />
+    <title>Meu site</title>
+
+    <style>
+      a:hover {
+        color: green !important;
+        background-color: black;
+        padding: 5px;
+        border-radius: 4px;
+      }
+
+      .select-link {
+        color: green !important;
+        background-color: black;
+        padding: 5px;
+        border-radius: 4px;
+      }
+
+      a{
+        text-decoration: none;
+        color: white
+      }
+    </style>
+
+    <script>
+      function clearLinks() {
+        var links = document.querySelectorAll('a');
+        for (let link of links) {
+          link.classList.remove('select-link');
+        }
+      }
+
+      function changeLink(element) {
+        clearLinks();
+
+        if (element.innerHTML === 'Home') {
+          console.log(element.innerHTML);
+          document.getElementById('home').style.display = 'block';
+          document.getElementById('servico').style.display = 'none';
+          document.getElementById('contato').style.display = 'none';
+        }else if(element.innerHTML === 'Serviços'){
+          document.getElementById('home').style.display = 'none';
+          document.getElementById('servico').style.display = 'block';
+          document.getElementById('contato').style.display = 'none';
+          
+        }else if(element.innerHTML === 'Contato'){
+          document.getElementById('home').style.display = 'nome';
+          document.getElementById('servico').style.display = 'none';
+          document.getElementById('contato').style.display = 'block';
+
+        }
+        element.classList.add('select-link');
+      }
+    </script>
+  </head>
+  <body>
+    <nav
+      style="
+        background-color: grey;
+        padding: 10px;
+        border-radius: 4px 4px 0px 0px;
+      "
+    >
+      <ul style="display: inline; padding: 5px">
+        <li style="display: inline; padding: 5px">
+          <a
+            onclick="changeLink(this)"
+            style="
+              text-decoration: none;
+              font-family: satisfy, sans-serif;
+              color: white;
+              font-weight: 700;
+            "
+            href="#"
+            >Home</a
+          >
+        </li>
+        <li style="display: inline; padding: 5px">
+          <a
+            onclick="changeLink(this)"
+            style="
+              text-decoration: none;
+              font-family: satisfy, sans-serif;
+              color: white;
+              font-weight: 700;
+            "
+            href="#"
+            >Serviços</a
+          >
+        </li>
+        <li style="display: inline; padding: 5px">
+          <a
+            onclick="changeLink(this)"
+            style="
+              text-decoration: none;
+              font-family: satisfy, sans-serif;
+              color: white;
+              font-weight: 700;
+            "
+            href="#"
+            >Contato</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div
+        id="home"
+        style="background-color: #dddbbb; height: 300px; padding: 10px"
+      >
+        <h1 style="font-family: bebas neue">Aqui é minha home</h1>
+        <p style="font-family: roboto">Estou na minha home amigo</p>
+      </div>
+      <div
+        id="servico"
+        style="background-color: #dddbbb; height: 300px; padding: 10px"
+      >
+        <h1 style="font-family: bebas neue">Aqui é meu serviço</h1>
+        <p style="font-family: roboto">Estou nos meus serviços</p>
+      </div>
+      <div
+        id="contato"
+        style="background-color: #dddbbb; height: 300px; padding: 10px"
+      >
+        <h1 style="font-family: bebas neue">Aqui é meu contato</h1>
+        <p style="font-family: roboto">Estou nos meus contatos</p>
+      </div>
+    </main>
+    <footer
+      style="
+        background-color: grey;
+        border-radius: 0px 0px 4px 4px;
+        padding: 10px;
+        display: flex;
+      "
+    >
+      <div style="width: 40%">
+        <ul style="color: white">
+          <li
+            style="
+              font-family: sans-serif;
+              padding: 5px;
+              list-style-type: square;
+            "
+          >
+            <a href="#">Home</a>
+          </li>
+          <li
+            style="
+              font-family: sans-serif;
+              padding: 5px;
+              list-style-type: square;
+            "
+          >
+            <a href="#">Serviços</a>
+          </li>
+          <li
+            style="
+              font-family: sans-serif;
+              padding: 5px;
+              list-style-type: square;
+            "
+          >
+            <a href="#">Contato</a>
+          </li>
+        </ul>
+      </div>
+      <div style="width: 80%">
+        <p
+          style="
+            color: white;
+            text-align: left;
+            font-family: courier, sans-serif;
+            padding: 5px;
+          "
+        >
+          Aqui estamos com nossa empresa para melhor lhe servir
+        </p>
+
+        <span
+          style="
+            color: white;
+            text-align: left;
+            font-family: courier, sans-serif;
+            padding: 5px;
+          "
+          >Acesse nossas redes sociais</span
+        >
+      </div>
+    </footer>
+  </body>
+  <script>
+    document.getElementById('servico').style.display = 'none';
+    document.getElementById('contato').style.display = 'none';
+  </script>
+</html>
